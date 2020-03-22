@@ -8,6 +8,10 @@ import { CourseTableComponentComponent } from './course-table-component/course-t
 import { CourseViewerComponentComponent } from './course-viewer-component/course-viewer-component.component';
 import { ModuleListComponentComponent } from './module-list-component/module-list-component.component';
 import { LessonTabsComponentComponent } from './lesson-tabs-component/lesson-tabs-component.component';
+import { CourseTableComponent } from './course-table/course-table.component';
+import { CourseViewerComponent } from './course-viewer/course-viewer.component';
+import { ModuleListComponent } from './module-list/module-list.component';
+import { LessonTabsComponent } from './lesson-tabs/lesson-tabs.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { LessonTabsComponentComponent } from './lesson-tabs-component/lesson-tab
     CourseTableComponentComponent,
     CourseViewerComponentComponent,
     ModuleListComponentComponent,
-    LessonTabsComponentComponent
+    LessonTabsComponentComponent,
+    CourseTableComponent,
+    CourseViewerComponent,
+    ModuleListComponent,
+    LessonTabsComponent
   ],
   imports: [
     BrowserModule,
