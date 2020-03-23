@@ -5,18 +5,18 @@ import { CourseViewerComponent } from "./course-viewer/course-viewer.component";
 
 const routes: Routes = [
   { path: "", component: CourseTableComponent },
-  { path: "course-viewer/:courseId", component: CourseViewerComponent },
+  { path: "table/courses/:courseId/modules", component: CourseViewerComponent },
   {
-    path: "course-viewer/:courseId/modules/:moduleId",
+    path: ":layout/courses/:courseId/modules/:moduleId/lessons",
     component: CourseViewerComponent
   },
-  {
-    path: "course-viewer/:courseId/modules/:moduleId/lessons/:lessonId",
-    component: CourseViewerComponent
-  },
+  // {
+  //   path: ":layout/courses/:courseId/modules/:moduleId/lessons/:lessonId",
+  //   component: CourseViewerComponent
+  // },
   {
     path:
-      "course-viewer/:courseId/modules/:moduleId/lessons/:lessonId/topics/:topicId",
+      ":layout/courses/:courseId/modules/:moduleId/lessons/:lessonId/topics/",
     component: CourseViewerComponent
   }
 ];
