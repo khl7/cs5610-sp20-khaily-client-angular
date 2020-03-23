@@ -1,4 +1,3 @@
-<p>course-table works!</p>
 <h2>Course Table</h2>
 <input [(ngModel)]="courseTitle"/>
 <button (click)="addCourse(courseTitle)">
@@ -9,7 +8,7 @@
     <button (click)="deleteCourse(course)">
       Delete
     </button>
-    <a href="/course-viewer/{{course._id}}">
+    <a href="table/courses/{{course._id}}/modules">
       {{course.title}} {{course._id}}
     </a>
   </li>
