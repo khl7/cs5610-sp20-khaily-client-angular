@@ -1,5 +1,5 @@
-<h3>Lessons for {{ moduleId }}</h3>
-<ul class="list-group">
+<h3>Lessons: </h3>
+<ul class="nav nav-tabs">
   <li
     class="list-group-item"
     [class]="{ active: lessonId === lesson._id }"
@@ -10,7 +10,7 @@
         moduleId
       }}/lessons/{{ lesson._id }}/topics"
     >
-      {{ lesson.title }} {{ lesson._id }}
+      {{ lesson.title }}
     </a>
   </li>
 </ul>

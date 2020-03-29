@@ -1,10 +1,10 @@
-<h3>Module List {{moduleId}}</h3>
+<h3>Module List</h3>
 <ul class="list-group">
   <li *ngFor="let module of modules"
       [class]="{'active': moduleId === module._id}"
       class="list-group-item">
     <a routerLink="/table/courses/{{courseId}}/modules/{{module._id}}/lessons">
-      {{module.title}} {{module._id}}
+      {{module.title}}
     </a>
   </li>
 </ul>
