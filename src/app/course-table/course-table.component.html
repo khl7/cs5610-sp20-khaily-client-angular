@@ -1,15 +1,20 @@
-<h2>Course Table</h2>
-<input [(ngModel)]="courseTitle"/>
-<button (click)="addCourse(courseTitle)">
-  Create Course
-</button>
-<ul>
-  <li *ngFor="let course of courses">
-    <button (click)="deleteCourse(course)">
-      Delete
+<div class="course-table">
+  <h2>Course Table</h2>
+  <div>
+    <input class="my-4" [(ngModel)]="courseTitle" />
+    <button (click)="addCourse(courseTitle)">
+      Create Course
     </button>
-    <a href="table/courses/{{course._id}}/modules">
-      {{course.title}}
-    </a>
-  </li>
-</ul>
+  </div>
+
+  <ul>
+    <li *ngFor="let course of courses">
+      <button (click)="deleteCourse(course)">
+        Delete
+      </button>
+      <a href="table/courses/{{ course._id }}/modules">
+        {{ course.title }}
+      </a>
+    </li>
+  </ul>
+</div>
