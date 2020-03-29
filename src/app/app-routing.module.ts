@@ -16,7 +16,7 @@ const routes: Routes = [
   // },
   {
     path:
-      ":layout/courses/:courseId/modules/:moduleId/lessons/:lessonId/topics/",
+      ":layout/courses/:courseId/modules/:moduleId/lessons/:lessonId/topics",
     component: CourseViewerComponent
   }
 ];

@@ -1,10 +1,16 @@
-<h3>Lessons for {{moduleId}}</h3>
+<h3>Lessons for {{ moduleId }}</h3>
 <ul class="list-group">
-  <li class="list-group-item"
-      [class]="{'active': lessonId === lesson._id}"
-      *ngFor="let lesson of lessons">
-    <a routerLink="tables/courses/{{courseId}}/modules/{{moduleId}}/lessons/{{lesson._id}}/topics">
-        {{lesson.title}}
+  <li
+    class="list-group-item"
+    [class]="{ active: lessonId === lesson._id }"
+    *ngFor="let lesson of lessons"
+  >
+    <a
+      routerLink="/table/courses/{{ courseId }}/modules/{{
+        moduleId
+      }}/lessons/{{ lesson._id }}/topics"
+    >
+      {{ lesson.title }} {{ lesson._id }}
     </a>
   </li>
 </ul>
