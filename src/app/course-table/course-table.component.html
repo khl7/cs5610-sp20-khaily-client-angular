@@ -9,9 +9,6 @@
 
   <ul>
     <li *ngFor="let course of courses">
-      <button (click)="deleteCourse(course)">
-        Delete
-      </button>
       <a href="table/courses/{{ course._id }}/modules">
         {{ course.title }}
       </a>
