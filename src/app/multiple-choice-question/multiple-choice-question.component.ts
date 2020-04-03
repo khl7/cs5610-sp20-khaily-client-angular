@@ -1,25 +1,29 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {faCheck, faTimes} from '@fortawesome/free-solid-svg-icons';
-
+import { Component, Input, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-multiple-choice-question',
-  templateUrl: './multiple-choice-question.component.html',
-  styleUrls: ['./multiple-choice-question.component.css']
+  selector: "app-multiple-choice-question",
+  templateUrl: "./multiple-choice-question.component.html",
+  styleUrls: ["./multiple-choice-question.component.css"]
 })
 export class MultipleChoiceQuestionComponent implements OnInit {
-
   @Input()
-  question = {_id: '', title: '', question: '', choices: [], correct: '', answer: '' }
-  grading = false
-  faCheck = faCheck; faTimes = faTimes
+  question = {
+    _id: "",
+    title: "",
+    question: "",
+    choices: [],
+    correct: "",
+    answer: ""
+  };
+  @Input()
+  answer = "";
+  grading = false;
 
-  grade = () => { this.grading = true; }
+  grade = () => {
+    this.grading = true;
+  };
 
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
