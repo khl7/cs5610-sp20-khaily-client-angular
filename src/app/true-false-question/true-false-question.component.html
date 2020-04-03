@@ -9,7 +9,14 @@
       name="{{ question._id }}"
     />
     Yes
-    <i class="fa fa-check fa-lg"></i>
+    <i
+      [hidden]="grading === false && answer !== question.correct"
+      class="fa fa-check fa-lg"
+    ></i>
+    <i
+      [hidden]="grading === false && answer === question.correct"
+      class="fa fa-times fa-lg"
+    ></i>
   </label>
 </div>
 
@@ -22,6 +29,14 @@
     name="{{ question._id }}"
   />
   No
+  <i
+    [hidden]="grading === false && answer !== question.correct"
+    class="fa fa-check fa-lg"
+  ></i>
+  <i
+    [hidden]="grading === false && answer === question.correct"
+    class="fa fa-times fa-lg"
+  ></i>
 </label>
 <br />
 Your answer: {{ answer }}
