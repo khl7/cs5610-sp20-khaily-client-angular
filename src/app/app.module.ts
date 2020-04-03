@@ -16,6 +16,7 @@ import {LessonServiceClient} from './services/LessonServiceClient';
 import { QuizzesComponent } from './quizzes/quizzes.component';
 import { QuestionComponent } from './question/question.component';
 import { QuizComponent } from './quiz/quiz.component';
+import { TrueFalseQuestionComponent } from './true-false-question/true-false-question.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { QuizComponent } from './quiz/quiz.component';
     QuizzesComponent,
     QuestionComponent,
     QuizComponent,
+    TrueFalseQuestionComponent,
   ],
   imports: [
     FormsModule,
