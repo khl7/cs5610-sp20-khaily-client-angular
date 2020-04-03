@@ -11,6 +11,7 @@ import { ModuleListComponent } from './module-list/module-list.component';
 import {ModuleServiceClient} from './services/ModuleServiceClient';
 import { LessonTabsComponent } from './lesson-tabs/lesson-tabs.component';
 import {LessonServiceClient} from './services/LessonServiceClient';
+import { QuizzesComponent } from './quizzes/quizzes.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {LessonServiceClient} from './services/LessonServiceClient';
     CourseViewerComponent,
     ModuleListComponent,
     LessonTabsComponent,
+    QuizzesComponent,
   ],
   imports: [
     FormsModule,
