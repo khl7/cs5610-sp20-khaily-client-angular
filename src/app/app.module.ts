@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CourseTableComponent } from './course-table/course-table.component';
 import {CourseServiceClient} from './services/CourseServiceClient';
+import {QuestionServiceClient} from './services/QuestionServiceClient';
+import {QuizServiceClient} from './services/QuizzesServiceClient';
 import {FormsModule} from '@angular/forms';
 import { CourseViewerComponent } from './course-viewer/course-viewer.component';
 import { ModuleListComponent } from './module-list/module-list.component';
@@ -31,6 +33,9 @@ import { QuizzesComponent } from './quizzes/quizzes.component';
     CourseServiceClient,
     ModuleServiceClient,
     LessonServiceClient,
+    QuizServiceClient,
+    QuestionServiceClient
+
   ],
   bootstrap: [AppComponent]
 })
