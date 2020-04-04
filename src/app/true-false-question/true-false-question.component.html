@@ -1,6 +1,9 @@
 <h3>True or False {{ question._id }}</h3>
 <h4>{{ question.question }}</h4>
-<div class="bg-lightgreen">
+<div
+  [class]="{'bg-lightgreen': grading && 'true' === question.correct, 
+  'bg-lightred': grading && 'true' !== question.correct && question.correct !== answer}"
+>
   <label>
     <input
       [(ngModel)]="answer"
@@ -25,34 +28,42 @@
 </div>
 
 <br />
-<label>
-  <input
-    [(ngModel)]="answer"
-    type="radio"
-    value="false"
-    name="{{ question._id }}"
-  />
-  No
-  <i
-    [hidden]="grading === false || 'false' !== question.correct"
-    class="fa fa-check fa-lg"
-  ></i>
-  <i
-    [hidden]="
-      grading === false ||
-      'false' === question.correct ||
-      question.correct === answer
-    "
-    class="fa fa-times fa-lg"
-  ></i>
-</label>
+<div
+  [class]="{'bg-lightgreen': grading && 'false' === question.correct, 
+    'bg-lightred': grading 
+      && 'false' !== question.correct 
+      && question.correct !== answer}"
+>
+  <label>
+    <input
+      [(ngModel)]="answer"
+      type="radio"
+      value="false"
+      name="{{ question._id }}"
+    />
+    No
+    <i
+      [hidden]="grading === false || 'false' !== question.correct"
+      class="fa fa-check fa-lg"
+    ></i>
+    <i
+      [hidden]="
+        grading === false ||
+        'false' === question.correct ||
+        question.correct === answer
+      "
+      class="fa fa-times fa-lg"
+    ></i>
+  </label>
+</div>
+
 <br />
 Your answer: {{ answer }}
 <!-- <br/>
 Correct answer: {{question.correct}}
 <br/> -->
-<span [hidden]="answer === question.correct">Wrong answer</span>
-<span [hidden]="answer !== question.correct">Right answer</span>
+<!-- <span [hidden]="answer === question.correct">Wrong answer</span>
+<span [hidden]="answer !== question.correct">Right answer</span> -->
 <br />
 
 <button (click)="grade()">
