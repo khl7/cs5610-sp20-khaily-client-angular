@@ -5,16 +5,20 @@
     <input
       [(ngModel)]="answer"
       type="radio"
-      value="TRUE"
+      value="true"
       name="{{ question._id }}"
     />
     Yes
     <i
-      [hidden]="grading === false && answer !== question.correct"
+      [hidden]="grading === false || 'true' !== question.correct"
       class="fa fa-check fa-lg"
     ></i>
     <i
-      [hidden]="grading === false && answer === question.correct"
+      [hidden]="
+        grading === false ||
+        'true' === question.correct ||
+        question.correct === answer
+      "
       class="fa fa-times fa-lg"
     ></i>
   </label>
@@ -25,16 +29,20 @@
   <input
     [(ngModel)]="answer"
     type="radio"
-    value="FALSE"
+    value="false"
     name="{{ question._id }}"
   />
   No
   <i
-    [hidden]="grading === false && answer !== question.correct"
+    [hidden]="grading === false || 'false' !== question.correct"
     class="fa fa-check fa-lg"
   ></i>
   <i
-    [hidden]="grading === false && answer === question.correct"
+    [hidden]="
+      grading === false ||
+      'false' === question.correct ||
+      question.correct === answer
+    "
     class="fa fa-times fa-lg"
   ></i>
 </label>
