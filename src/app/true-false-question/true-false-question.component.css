@@ -5,3 +5,7 @@
 .bg-lightred {
   background-color: #ffcccb;
 }
+
+label {
+  margin-bottom: 0;
+}

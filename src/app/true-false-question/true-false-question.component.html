@@ -1,8 +1,11 @@
-<h3>True or False {{ question._id }}</h3>
+<h3>True or False</h3>
 <h4>{{ question.question }}</h4>
 <div
-  [class]="{'bg-lightgreen': grading && 'true' === question.correct, 
-  'bg-lightred': grading && 'true' !== question.correct && question.correct !== answer}"
+  [class]="{
+    'bg-lightgreen': grading && 'true' === question.correct,
+    'bg-lightred':
+      grading && 'true' !== question.correct && question.correct !== answer
+  }"
 >
   <label>
     <input
@@ -26,13 +29,12 @@
     ></i>
   </label>
 </div>
-
-<br />
 <div
-  [class]="{'bg-lightgreen': grading && 'false' === question.correct, 
-    'bg-lightred': grading 
-      && 'false' !== question.correct 
-      && question.correct !== answer}"
+  [class]="{
+    'bg-lightgreen': grading && 'false' === question.correct,
+    'bg-lightred':
+      grading && 'false' !== question.correct && question.correct !== answer
+  }"
 >
   <label>
     <input
@@ -56,14 +58,9 @@
     ></i>
   </label>
 </div>
-
-<br />
-Your answer: {{ answer }}
-<!-- <br/>
-Correct answer: {{question.correct}}
-<br/> -->
-<!-- <span [hidden]="answer === question.correct">Wrong answer</span>
-<span [hidden]="answer !== question.correct">Right answer</span> -->
+<br/>
+<span class="my-1">Your answer: {{ answer }}</span>
+<br/>
 <br />
 
 <button (click)="grade()">
