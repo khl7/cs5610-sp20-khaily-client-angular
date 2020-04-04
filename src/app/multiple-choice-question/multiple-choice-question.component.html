@@ -1,19 +1,38 @@
 <h3>Multiple Choice</h3>
-<h4>What is your favorite color?</h4>
+<h4>{{ question.question }}</h4>
 
 <div *ngFor="let choice of question.choices">
-  <label>
-    <input
-      [(ngModel)]="answer"
-      type="radio"
-      value="{{ choice }}"
-      name="{{ question._id }}"
-    />
-    {{ choice }}
-  </label>
+  <div
+    [class]="{
+      'bg-lightgreen': grading && choice === question.correct,
+      'bg-lightred':
+        grading && choice !== question.correct && question.correct !== answer
+    }"
+  >
+    <label>
+      <input
+        [(ngModel)]="answer"
+        type="radio"
+        value="{{ choice }}"
+        name="{{ question._id }}"
+      />
+      {{ choice }}
+      <i
+        [hidden]="grading === false || choice !== question.correct"
+        class="fa fa-check fa-lg"
+      ></i>
+      <i
+        [hidden]="
+          grading === false ||
+          choice === question.correct ||
+          question.correct === answer
+        "
+        class="fa fa-times fa-lg"
+      ></i>
+    </label>
+  </div>
 </div>
 Your answer: {{ answer }}
-
 <br />
 <button (click)="grade()">
   Grade
